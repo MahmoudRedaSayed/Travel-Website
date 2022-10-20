@@ -19,6 +19,22 @@ $white:#fff;
 $lightbg:#eee;
 $border:.2rem solid $black;
 $boxshadow : 0 .5rem 1rem rgb(0,0,0,.1);
+.heading{
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 4rem;
+  color: $black;
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    border: 0.2rem solid $black;
+    color: $black;
+    cursor: pointer;
+    background: none;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+}
 
 @mixin grid($val) {
   display: grid;
@@ -223,7 +239,7 @@ html{
 .swiper-button-prev {
   &::after{
     font-size: 3rem;
-  color: #10221b;
+  color: $black;
   }
   
 }
@@ -258,4 +274,401 @@ html{
   }
 
 }
+
+
+// the start of about section
+.about {
+  background: $lightbg;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+  .image {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 42rem;
+            flex: 1 1 42rem;
+    padding-right: 5rem;
+    padding-bottom: 5rem;
+    img {
+      width: 100%;
+      -webkit-box-shadow: 4rem 4rem 0 rgba(0, 0, 0, 0.1);
+              box-shadow: 4rem 4rem 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+  .content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem;
+    flex: 1 1 42rem;
+
+    h3 {
+      font-size: 3rem;
+      color: $green;
+    }
+    p {
+      font-size: 1.5rem;
+      color: $black;
+      padding: 1rem 0;
+      line-height: 2;
+    }
+  }
+
+}
+
+// start of shop section
+
+.shop .slide {
+  border: 0.2rem solid $black;
+  &:hover {
+    .image .icons {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  .image {
+    position: relative;
+    overflow: hidden;
+    height: 30rem;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+    }
+    .icons {
+      width: 100%;
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+      text-align: center;
+      z-index: 10;
+      -webkit-transform: translateY(7rem);
+              transform: translateY(7rem);
+              a {
+                height: 4.5rem;
+                width: 4.5rem;
+                line-height: 4.5rem;
+                font-size: 1.7rem;
+                background: $black;
+                color: $white;
+                margin: 0 .2rem;
+                &:hover{
+                  background: $green;
+                }
+              }
+              
+    }
+  
+  }
+  .content {
+    padding: 1rem 0;
+    text-align: center;
+    h3 {
+      font-size: 2rem;
+      color: $black;
+    }
+    .price {
+      padding: 1rem 0;
+      padding-top: .5rem;
+      font-size: 2rem;
+      color: $green;
+    }
+    .stars i {
+      font-size: 1.7rem;
+      color: $black;
+    }
+  }
+  
+}
+
+// the start of the backage section
+
+.packages {
+  background: $lightbg;
+  .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(32rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    .box {
+      text-align: center;
+      background: $white;
+      border: 0.2rem solid $black;
+      -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+              box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      border-radius: .5rem;
+      &:hover{
+          background: $black;
+          .content > * {
+            color: $white;
+          }
+          .btn {
+            border-color: $white;
+            &:hover{
+              background: $white;
+              color: $black;
+            }
+          }
+          
+          
+      }
+      .image {
+        height: 25rem;
+        overflow: hidden;
+        padding: 2rem;
+        padding-bottom: 0;
+        border-radius: .5rem;
+        img {
+          height: 100%;
+          width: 100%;
+          -o-object-fit: cover;
+             object-fit: cover;
+          border-radius: .5rem;
+        }
+      }
+      .content {
+        padding: 2rem;
+        h3 {
+          font-size: 2rem;
+          color: $black;
+        }
+        p {
+          font-size: 1.5rem;
+          color: $black;
+          padding: 1rem 0;
+          line-height: 2;
+        }
+        .price {
+          font-size: 2rem;
+          color: $green;
+        }
+        
+      }
+      
+    }
+  }
+}
+
+// start of the services
+.services {
+  background: $lightbg;
+  .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+    gap: 1.5rem;
+    .box {
+      text-align: center;
+      padding: 2rem;
+      border: 0.2rem solid $black;
+      border-radius: .5rem;
+      background: $white;
+      &:hover{
+        background:$black;
+        img {
+          -webkit-filter: invert(1);
+                  filter: invert(1);
+        }
+        p {
+          color: $white;
+        }
+        .btn {
+          border-color:$white;
+          color: $white;
+          &:hover{
+            background: $white;
+            color: $black;
+          }
+        }
+      }
+      img {
+        height: 10rem;
+        margin-bottom: 1rem;
+      }
+      h3 {
+        font-size: 2rem;
+        color: $green;
+      }
+      p {
+        font-size: 1.5rem;
+        color: $black;
+        padding: 1rem 0;
+        line-height: 2;
+      }
+    }
+  }
+}
+
+// start of the reviews section
+
+.reviews .slide {
+  .text {
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  background: #eee;
+  border-radius: .5rem;
+  color: #10221b;
+  line-height: 2;
+  position: relative;
+  z-index: 0;
+  margin-bottom: 3rem;
+  &::before{
+    content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: .7rem;
+  height: 3rem;
+  width: 3rem;
+  background: #eee;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  }
+  .user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1rem;
+    img {
+      height: 7rem;
+      width: 7rem;
+      border-radius: 50%;
+    }
+    h3 {
+      font-size: 2rem;
+      color: $black;
+    }
+    span {
+      color: $green;
+      font-size: 1.5rem;
+    }
+    
+    
+  }
+}
+}
+
+
+
+// the start of the blog
+
+.blogs .slide {
+  text-align: center;
+  padding: 2rem;
+  img {
+    height: 25rem;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: .5rem;
+  }
+  .icons {
+    background: #10221b;
+    border-radius: .5rem;
+    padding: 1rem;
+    position: relative;
+    top: -2rem;
+    display: inline-block;
+    a {
+      font-size: 1.4rem;
+      color: #fff;
+      margin: 0 1rem;
+      &:hover{
+        color: $green;
+      }    
+      i {
+        padding-right: .5rem;
+        color: #219150;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+    color: $black;
+  }
+  p {
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    line-height: 2;
+    color: $black;
+  }
+  
+}
+
+
+
+
+// the start of the newsletter
+.newsletter {
+  background: $lightbg;
+  .content {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    p {
+      font-size: 1.5rem;
+      line-height: 2;
+      color: #10221b;
+    }
+    form {
+      margin-top: 2rem;
+      background: #fff;
+      border-radius: 5rem;
+      border: 0.2rem solid #10221b;
+      padding: .7rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      .email {
+        width: 100%;
+        background: none;
+        text-transform: none;
+        font-size: 1.6rem;
+        color: $black;
+        padding: 0 1.3rem;
+      }
+      .btn {
+        margin-top: 0;
+        border-radius: 5rem;
+        background: $black;
+        color: $white;
+        &:hover{
+          background: none;
+          color: $black;
+        }
+      }
+    }
+    
+  }
+}
+
+
+
+
+// the start of the clients section
+
+.clients .silde {
+  text-align: center;
+  img {
+    height: 12rem;
+  }
+  
+}
+
+
+
+
+
 
